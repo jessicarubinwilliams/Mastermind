@@ -203,6 +203,9 @@ publish/
 *.pubxml
 *.publishproj
 
+# Local publish profiles
+Properties/PublishProfiles/
+
 # Microsoft Azure Web App publish settings. Comment the next line if you want to
 # checkin your Azure Web App publish settings, but sensitive information contained
 # in these scripts will be unencrypted
@@ -244,6 +247,11 @@ _pkginfo.txt
 *.[Cc]ache
 # but keep track of directories ending in .cache
 !?*.[Cc]ache/
+
+# Local appsettings overrides
+appsettings.Development.json
+appsettings.Local.json
+*.secret.json
 
 # Others
 ClientBin/
@@ -403,6 +411,9 @@ FodyWeavers.xsd
 !.vscode/launch.json
 !.vscode/extensions.json
 !.vscode/*.code-snippets
+
+# Local launch settings
+Properties/launchSettings.json
 
 # Local History for Visual Studio Code
 .history/
