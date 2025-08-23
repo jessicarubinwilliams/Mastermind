@@ -427,3 +427,6 @@ Properties/launchSettings.json
 *.msix
 *.msm
 *.msp
+
+# Ignore frontend build output
+src/Mastermind.Api/wwwroot/
