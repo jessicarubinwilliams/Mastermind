@@ -20,7 +20,7 @@
 		result.value = ''
 		error.value = ''
 		try {
-			const res = await client.get<string>('/api/health', { responseType: 'text' })
+			const res = await client.get<string>('/api/TestHealth', { responseType: 'text' })
 			result.value = typeof res.data === 'string' ? res.data : JSON.stringify(res.data)
 		} catch (e: unknown) {
 			error.value = e instanceof Error ? e.message : String(e)
