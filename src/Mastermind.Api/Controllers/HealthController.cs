@@ -1,24 +1,35 @@
+using System;
+using Mastermind.Api.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Mastermind.Api.Controllers;
-
-/// <summary>
-/// Simple health check controller to confirm the API is up.
-/// </summary>
-[ApiController]
-[Route("api/[controller]")]
-public class HealthController : ControllerBase
+namespace Mastermind.Api.Controllers
 {
     /// <summary>
-    /// Returns a basic status payload confirming the API is running.
+    /// Simple health check endpoint to confirm the API is running.
     /// </summary>
-    [HttpGet]
-    public IActionResult Get()
+    [ApiController]
+    [Route("api/[controller]")]
+    [Produces("application/json")]
+    public sealed class HealthController : ControllerBase
     {
-        return Ok(new
+        /// <summary>
+        /// Returns a basic status payload indicating the API is healthy.
+        /// </summary>
+        /// <returns>
+        /// A <see cref="HealthStatusResponse"/> containing a status string and the current UTC timestamp.
+        /// </returns>
+        [HttpGet]
+        [ProducesResponseType(typeof(HealthStatusResponse), StatusCodes.Status200OK)]
+        public IActionResult Get()
         {
-            status = "Healthy",
-            timestampUtc = DateTime.UtcNow
-        });
+            var payload = new HealthStatusResponse
+            {
+                Status = "Healthy",
+                TimestampUtc = DateTime.UtcNow
+            };
+
+            return Ok(payload);
+        }
     }
 }
