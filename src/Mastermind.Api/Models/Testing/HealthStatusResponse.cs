@@ -12,5 +12,5 @@ public class HealthStatusResponse
     /// <summary>
     /// The server timestamp in UTC when the status was generated.
     /// </summary>
-    public DateTime TimestampUtc { get; init; }
+    public DateTimeOffset TimestampUtc { get; init; }
 }

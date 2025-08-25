@@ -64,7 +64,7 @@ public class RandomIntegersService(
     /// <param name="min">Inclusive minimum value.</param>
     /// <param name="max">Inclusive maximum value.</param>
     /// <returns>An array of locally generated integers.</returns>
-    private static int[] LocalRandomIntegerGeneration(int count, int min, int max)
+    private int[] LocalRandomIntegerGeneration(int count, int min, int max)
     {
         return Enumerable.Range(0, count)
             .Select(_ => Random.Shared.Next(min, max + 1))

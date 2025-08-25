@@ -54,7 +54,7 @@ public class TestCacheController(ICacheService cache) : ControllerBase
                 await Task.Yield();
                 return new TestCachePayload
                 {
-                    WhenUtc = DateTime.UtcNow,
+                    WhenUtc = DateTimeOffset.UtcNow,
                     Note = "created by factory"
                 };
             },
@@ -146,7 +146,7 @@ public class TestCacheController(ICacheService cache) : ControllerBase
     /// <br />Zero to indicate the caller explicitly disabled that expiration.
     /// <br />A positive <see cref="TimeSpan" /> otherwise.
     /// </returns>
-    private static TimeSpan? ToTimeSpanOrNull(int? seconds)
+    private TimeSpan? ToTimeSpanOrNull(int? seconds)
     {
         // Interpret null as not provided
         if (seconds is null) return null;

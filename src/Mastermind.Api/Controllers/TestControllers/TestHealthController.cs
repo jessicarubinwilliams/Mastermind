@@ -26,7 +26,7 @@ public sealed class TestHealthController : ControllerBase
         var payload = new HealthStatusResponse
         {
             Status = "Healthy",
-            TimestampUtc = DateTime.UtcNow
+            TimestampUtc = DateTimeOffset.UtcNow
         };
 
         return Ok(payload);
