@@ -30,6 +30,21 @@ public static class ServiceCollectionExtensions
         IConfiguration configuration,
         IHostEnvironment environment)
     {
+        // CORS
+        var allowedOrigins = configuration
+            .GetSection("Cors:AllowedOrigins")
+            .Get<string[]>() ?? [];
+
+        services.AddCors(options =>
+        {
+            options.AddPolicy("ConfiguredOrigins", policy =>
+            {
+                policy.WithOrigins(allowedOrigins)
+                    .AllowAnyHeader()
+                    .AllowAnyMethod();
+            });
+        });
+
         services.AddDistributedMemoryCache();
 
         // appSettings
@@ -62,7 +77,7 @@ public static class ServiceCollectionExtensions
                     || s.AbsoluteExpirationSeconds is null
                     || s.SlidingExpirationSeconds <= s.AbsoluteExpirationSeconds,
                 "SlidingExpirationSeconds must be less than or equal to AbsoluteExpirationSeconds when both are provided.")
-            .Validate(s => s.SecretCombinationLength < 4,
+            .Validate(s => s.SecretCombinationLength >= 4,
                 "Invalid GamePlaySettings configuration.")
             .ValidateOnStart();
 

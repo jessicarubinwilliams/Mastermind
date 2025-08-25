@@ -9,7 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Host.UseSerilog((ctx, services, cfg) =>
 {
     cfg.ReadFrom.Configuration(ctx.Configuration)
-       .ReadFrom.Services(services);
+        .ReadFrom.Services(services);
 });
 
 builder.Services.AddControllers();
@@ -28,12 +28,13 @@ app.UseSerilogRequestLogging();
 
 if (!app.Environment.IsProduction())
 {
-	app.UseDeveloperExceptionPage();
-	app.UseSwagger();
-	app.UseSwaggerUI();
+    app.UseDeveloperExceptionPage();
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
 
 app.UseHttpsRedirection();
+app.UseCors("ConfiguredOrigins");
 app.UseRouting();
 
 app.MapControllers();
