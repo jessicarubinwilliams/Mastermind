@@ -8,7 +8,7 @@ A web based application implementing the Mastermind number guessing game as a RE
 ## Table of Contents
 
 1. [Technologies Used](#technologies)
-2. [Description](#description)
+2. [Description](#description)     
 	2a. [Game Rules Implements](#rules)
 3. [Setup/Installation Requirements](#setup)
 4. [Game Play Instructions](#gameplay)
