@@ -427,3 +427,14 @@ Properties/launchSettings.json
 *.msix
 *.msm
 *.msp
+
+# Ignore frontend build output
+src/Mastermind.Api/wwwroot/
+
+# JetBrains Rider / IntelliJ
+.idea/
+*.iml
+
+# Rider crash logs
+.idea_modules/
+out/

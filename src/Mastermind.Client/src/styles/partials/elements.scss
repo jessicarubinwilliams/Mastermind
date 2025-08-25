@@ -1,0 +1,75 @@
+// #region BUTTONS
+button {
+	padding: var(--pad-2) var(--pad-3);
+	cursor: pointer;
+	border: 1px solid #ddd;
+	border-radius: var(--radius-2);
+	background: #fafafa;
+	transition: background-color 120ms ease-in-out, border-color 120ms ease-in-out;
+}
+
+button:hover {
+	background: #f0f0f0;
+}
+
+button:disabled {
+	opacity: 0.6;
+	cursor: not-allowed;
+}
+
+.buttonRow { 
+	margin-bottom: 0.75rem;
+}
+// #endregion BUTTONS
+
+// #region INPUTS
+input,
+select,
+textarea {
+	padding: var(--pad-2) var(--pad-3);
+	border: 1px solid #ccc;
+	border-radius: var(--radius-2);
+	font: inherit;
+	background: #fff;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+	outline: none;
+	border-color: #999;
+	box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05);
+}
+
+.fieldset, fieldset { 
+	margin-top: 1rem; 
+}
+// #endregion INPUTS
+
+// #region GAME BOARD
+.game-board { 
+	padding: 1rem;
+}
+
+.guess-row { 
+	display: flex;
+	gap: 0.5rem; 
+}
+
+.actions-row { 
+	margin-top: 0.5rem; 
+}
+
+.history-section { 
+	margin-top: 1rem; 
+}
+
+.history-list { 
+	padding-left: 1.25rem; 
+}
+
+.history-item .spacer { 
+	margin-left: 1rem; 
+}
+
+// #endregion GAME BOARD

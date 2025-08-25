@@ -1,0 +1,52 @@
+// #region SCSS VARIABLES
+$gap-3: 0.75rem;
+$pad-3: 0.75rem;
+$pad-2: 0.5rem;
+$radius-2: 6px;
+
+$bg-output: #f0f4f8;
+$bg-error: #fdecea;
+
+$font-grid: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+// #endregion SCSS VARIABLES
+
+// #region CSS VARIABLES
+
+:root {
+	--gap-3: #{$gap-3};
+	--pad-3: #{$pad-3};
+	--pad-2: #{$pad-2};
+	--radius-2: #{$radius-2};
+	--bg-output: #{$bg-output};
+	--bg-error: #{$bg-error};
+	--font-grid: #{$font-grid};
+}
+
+// #endregion CSS VARIABLES
+
+// #region LAYOUT HELPERS
+.app-container {
+	max-width: 720px;
+	margin: 2rem auto;
+	font-family: var(--font-grid);
+}
+
+.grid {
+	display: grid;
+	gap: var(--gap-3);
+}
+// #endregion LAYOUT HELPERS
+
+// #region UTILITY BLOCKS
+.output {
+	background: var(--bg-output);
+	padding: var(--pad-3);
+	white-space: pre-wrap;
+}
+
+.error {
+	background: var(--bg-error);
+	padding: var(--pad-3);
+	white-space: pre-wrap;
+}
+// #endregion UTILITY BLOCKS

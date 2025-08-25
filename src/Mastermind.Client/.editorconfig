@@ -1,0 +1,18 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+
+# Use tabs, display them as 4 spaces wide
+indent_style = tab
+indent_size = 4
+tab_width = 4
+
+# Trim whitespace at the end of lines
+trim_trailing_whitespace = true
+
+[*.md]
+# Keep trailing spaces in markdown (sometimes intentional for line breaks)
+trim_trailing_whitespace = false
