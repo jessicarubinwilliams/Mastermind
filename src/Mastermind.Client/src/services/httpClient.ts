@@ -42,18 +42,18 @@ export async function httpGet<Response = any, Config = any>(
 /** POST helper. */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export async function httpPost<Response = any, Body = any, Config = any>(
-	path: string,
-	body: Body,
-	config?: AxiosRequestConfig<Config>
+    path: string,
+    body?: Body,
+    config?: AxiosRequestConfig<Config>
 ): Promise<ApiResponse<Response>> {
-	return axios.post<Response, ApiResponse<Response>, Body>(
-		buildUrl(path),
-		body,
-		{
-			...baseConfig,
-			...(config ?? {}),
-		}
-	);
+    return axios.request<Response>({
+        method: 'POST',
+        url: buildUrl(path),
+        // Only include data when provided. If body is undefined, axios sends no request body.
+        ...(typeof body !== 'undefined' ? { data: body } : {}),
+        ...baseConfig,
+        ...(config ?? {}),
+    });
 }
 
 /** PUT helper. */

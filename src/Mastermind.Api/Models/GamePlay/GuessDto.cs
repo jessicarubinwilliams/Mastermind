@@ -2,7 +2,7 @@ using System;
 
 namespace Mastermind.Api.Models.GamePlay;
 
-public class GuessDTO
+public class GuessDto
 {
     /// <summary>Attempt number starting at 1.</summary>
     public int Attempt { get; set; }

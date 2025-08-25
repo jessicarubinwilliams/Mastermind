@@ -2,11 +2,10 @@
 	<main class="app-container">
 		<h1>Mastermind</h1>
 
-		<HealthCheck />
+		<GameBoard />
 	</main>
 </template>
 
 <script setup lang="ts">
-	import { ref } from 'vue'
-	import HealthCheck from '@/components/HealthCheck.vue'
+	import GameBoard from '@/components/GameBoard.vue';
 </script>

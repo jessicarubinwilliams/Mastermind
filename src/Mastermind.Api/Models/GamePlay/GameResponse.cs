@@ -15,5 +15,5 @@ public class GameResponse
     public int AttemptsRemaining { get; init; }
 
     /// <summary>Full history of guesses.</summary>
-    public List<GuessDTO> History { get; init; } = [];
+    public List<GuessDto> History { get; init; } = [];
 }

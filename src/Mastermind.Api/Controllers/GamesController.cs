@@ -33,7 +33,7 @@ public class GamesController(IGamePlayService gamePlayService, ILogger<GamesCont
         {
             var state = await _gamePlayService.CreateGameAsync(cancellationToken);
             var response = MapToGameResponse(state);
-            return CreatedAtAction(nameof(GetAsync), new { id = response.GameId }, response);
+            return CreatedAtRoute("GetGame", new { id = response.GameId }, response);
         }
         catch (ArgumentException ex)
         {
@@ -85,7 +85,7 @@ public class GamesController(IGamePlayService gamePlayService, ILogger<GamesCont
     /// </summary>
     /// <param name="id">Game identifier.</param>
     /// <returns>GameResponse with status, attempts remaining, and full history.</returns>
-    [HttpGet("{id:guid}")]
+    [HttpGet("{id:guid}", Name = "GetGame")]
     [ProducesResponseType(typeof(GameResponse), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> GetAsync([FromRoute] Guid id, CancellationToken cancellationToken)
@@ -121,14 +121,14 @@ public class GamesController(IGamePlayService gamePlayService, ILogger<GamesCont
     }
 
     /// <summary>
-    /// Maps a collection of <see cref="Mastermind.Core.GamePlay.Models.GuessEntry" /> to a list of <see cref="GuessDTO" />.
+    /// Maps a collection of <see cref="Mastermind.Core.GamePlay.Models.GuessEntry" /> to a list of <see cref="GuessDto" />.
     /// </summary>
     /// <param name="history">
     /// The <see cref="System.Collections.Generic.IEnumerable{T}" /> of
     /// <see cref="Mastermind.Core.GamePlay.Models.GuessEntry" />.
     /// </param>
-    /// <returns>A list of <see cref="GuessDTO" /> suitable for API responses.</returns>
-    private List<GuessDTO> MapHistory(IEnumerable<GuessEntry> history)
+    /// <returns>A list of <see cref="GuessDto" /> suitable for API responses.</returns>
+    private List<GuessDto> MapHistory(IEnumerable<GuessEntry> history)
     {
         return history
             .Select(MapGuessEntry)
@@ -136,13 +136,13 @@ public class GamesController(IGamePlayService gamePlayService, ILogger<GamesCont
     }
 
     /// <summary>
-    /// Maps a single <see cref="Mastermind.Core.GamePlay.Models.GuessEntry" /> to a <see cref="GuessDTO" />.
+    /// Maps a single <see cref="Mastermind.Core.GamePlay.Models.GuessEntry" /> to a <see cref="GuessDto" />.
     /// </summary>
     /// <param name="entry">The <see cref="Mastermind.Core.GamePlay.Models.GuessEntry" /> to map.</param>
-    /// <returns>A <see cref="GuessDTO" /> with feedback and metadata.</returns>
-    private GuessDTO MapGuessEntry(GuessEntry entry)
+    /// <returns>A <see cref="GuessDto" /> with feedback and metadata.</returns>
+    private GuessDto MapGuessEntry(GuessEntry entry)
     {
-        return new GuessDTO
+        return new GuessDto
         {
             Attempt = entry.AttemptNumber,
             Guess = entry.Guess,

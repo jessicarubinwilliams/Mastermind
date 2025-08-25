@@ -53,18 +53,17 @@ public class GamePlayService(
 
         // TODO JESSICA: Move this call to ValidateGuessDigits() inside of ComputeFeedback()
         ValidateGuessDigits(guess, state.SecretCombination.Length);
-
         var feedback = ComputeFeedback(state.SecretCombination, guess);
+        // Increment attempts first so AttemptNumber matches AttemptsUsed for this entry
+        state.AttemptsUsed++;
         var guessEntry = new GuessEntry
         {
-            AttemptNumber = state.AttemptsUsed + 1,
-            Guess = guess,
+            AttemptNumber = state.AttemptsUsed,
+            Guess = guess.ToArray(),
             Feedback = feedback,
             TimestampUtc = DateTimeOffset.UtcNow
         };
         state.GuessHistory.Add(guessEntry);
-        state.AttemptsUsed++;
-
         if (feedback.CorrectPositions == state.SecretCombination.Length)
         {
             state.Status = GameStatus.Won;
@@ -77,6 +76,9 @@ public class GamePlayService(
         }
 
         state.LastTouchedUtc = DateTimeOffset.UtcNow;
+
+        // Persist using the same keying scheme used by your getters
+        // If your getters build a key internally from the id, ensure this call does the same
         await PersistGameStateAsync(state.Id.ToString(), state, cancellationToken);
 
         return guessEntry;

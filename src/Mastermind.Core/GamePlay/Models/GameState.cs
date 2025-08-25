@@ -52,5 +52,5 @@ public class GameState
     /// <summary>
     /// Chronological history of all guesses submitted in this game.
     /// </summary>
-    public List<GuessEntry> GuessHistory { get; } = new();
+    public List<GuessEntry> GuessHistory { get; set; } = new();
 }

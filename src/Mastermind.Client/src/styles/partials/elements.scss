@@ -16,6 +16,10 @@ button:disabled {
 	opacity: 0.6;
 	cursor: not-allowed;
 }
+
+.buttonRow { 
+	margin-bottom: 0.75rem;
+}
 // #endregion BUTTONS
 
 // #region INPUTS
@@ -36,4 +40,36 @@ textarea:focus {
 	border-color: #999;
 	box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05);
 }
+
+.fieldset, fieldset { 
+	margin-top: 1rem; 
+}
 // #endregion INPUTS
+
+// #region GAME BOARD
+.game-board { 
+	padding: 1rem;
+}
+
+.guess-row { 
+	display: flex;
+	gap: 0.5rem; 
+}
+
+.actions-row { 
+	margin-top: 0.5rem; 
+}
+
+.history-section { 
+	margin-top: 1rem; 
+}
+
+.history-list { 
+	padding-left: 1.25rem; 
+}
+
+.history-item .spacer { 
+	margin-left: 1rem; 
+}
+
+// #endregion GAME BOARD
