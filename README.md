@@ -12,9 +12,10 @@ A web based application implementing the Mastermind number guessing game as a RE
 	2a. [Game Rules Implements](#rules)
 3. [Setup/Installation Requirements](#setup)
 4. [Game Play Instructions](#gameplay)
-5. [Known Bugs](#bugs)
-6. [License](#license)
-7. [Contact Information](#contact)
+5. [Discussion of the Code](#code)
+6. [Known Bugs](#bugs)
+7. [License](#license)
+8. [Contact Information](#contact)
 
 ## Technologies Used <a id="technologies"></a>
 
@@ -92,6 +93,9 @@ This project exposes a backend and a frontend for a Mastermind game. The server 
 
 ## Known Bugs <a id="bugs"></a>
 * No known bugs
+
+## Discussion of the Code <a id="code"></a>
+See the repos [Wiki](https://github.com/jessicarubinwilliams/Mastermind/wiki)
 
 ## License <a id="license"></a>
 *[MIT](https://choosealicense.com/licenses/mit/)*
