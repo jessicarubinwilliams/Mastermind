@@ -95,7 +95,7 @@ This project exposes a backend and a frontend for a Mastermind game. The server 
 * No known bugs
 
 ## Discussion of the Code <a id="code"></a>
-See the repos [Wiki](https://github.com/jessicarubinwilliams/Mastermind/wiki)
+See the repo's [Wiki](https://github.com/jessicarubinwilliams/Mastermind/wiki)
 
 ## License <a id="license"></a>
 *[MIT](https://choosealicense.com/licenses/mit/)*
