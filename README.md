@@ -9,7 +9,6 @@ A web based application implementing the Mastermind number guessing game as a RE
 
 1. [Technologies Used](#technologies)
 2. [Description](#description)     
-	2a. [Game Rules Implements](#rules)
 3. [Setup/Installation Requirements](#setup)
 4. [Game Play Instructions](#gameplay)
 5. [Discussion of the Code](#code)
@@ -65,9 +64,6 @@ This project exposes a backend and a frontend for a Mastermind game. The server 
 
 * Navigate to the directory inside of which you wish to house this project
 * Clone this project with the command `git clone https://github.com/jessicarubinwilliams/Mastermind.git`
-* Navigate to `Mastermind/src/Mastermind.Api`
-* Recreate project server environment and install required dependencies with terminal command `dotnet restore`
-* Build the project's server with terminal command `dotnet build`
 
 ### Run the project
 
