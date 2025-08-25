@@ -86,12 +86,11 @@ This project exposes a backend and a frontend for a Mastermind game. The server 
 4. Analyze the feedback you receive
 5. Guess again, rinse and repeat
 
+## Discussion of the Code <a id="code"></a>
+See the repo's [Wiki](https://github.com/jessicarubinwilliams/Mastermind/wiki)
 
 ## Known Bugs <a id="bugs"></a>
 * No known bugs
-
-## Discussion of the Code <a id="code"></a>
-See the repo's [Wiki](https://github.com/jessicarubinwilliams/Mastermind/wiki)
 
 ## License <a id="license"></a>
 *[MIT](https://choosealicense.com/licenses/mit/)*
